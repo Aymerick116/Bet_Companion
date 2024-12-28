@@ -9,3 +9,4 @@ router.post('/login', loginUser);
 router.get('/verify', verifyToken);
 
 export default router;
+
