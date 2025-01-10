@@ -58,16 +58,5 @@ export const loginUser = async (req, res) => {
 
 // Verify a JWT token
 export const verifyToken = (req, res) => {
-    const token = req.headers.authorization?.split(' ')[1]; // Extract token from "Bearer <token>"
-
-    if (!token) {
-        return res.status(401).json({ message: 'Token missing.' });
-    }
-
-    try {
-        const decoded = jwt.verify(token, SECRET_KEY);
-        res.status(200).json({ message: 'Token is valid!', user: decoded });
-    } catch (error) {
-        res.status(401).json({ message: 'Invalid token.', error: error.message });
-    }
+    res.status(200).json({ message: 'Token is valid!', user: req.user });
 };

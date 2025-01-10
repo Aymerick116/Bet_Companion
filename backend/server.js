@@ -18,6 +18,7 @@ app.use('/auth', authRoutes); // Authentication routes
 app.use('/matches', matchRoutes); // Match routes
 app.use("/teams", teamsRoutes); // Team routes
 
+
 // Default route
 app.get('/', (req, res) => {
     res.send('Welcome to the Soccer bets API!');
